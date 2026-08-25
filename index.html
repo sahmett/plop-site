@@ -67,19 +67,31 @@
     </section>
 
     <section class="product" id="plop" aria-labelledby="plop-title">
+      <div class="product-slider-nav" aria-label="Ürün ekranları" data-aria-tr="Ürün ekranları" data-aria-en="Product screens">
+        <span class="product-slide-count" aria-live="polite">01 / 03</span>
+        <div class="product-dots" role="group">
+          <button type="button" data-product-slide="0" aria-label="Odak zamanlayıcısını göster" data-aria-tr="Odak zamanlayıcısını göster" data-aria-en="Show focus timer" aria-pressed="true"><span>01</span><b data-tr="Odak" data-en="Focus">Odak</b></button>
+          <button type="button" data-product-slide="1" aria-label="Dolu rafı göster" data-aria-tr="Dolu rafı göster" data-aria-en="Show full shelf" aria-pressed="false"><span>02</span><b data-tr="Dolu raf" data-en="Full shelf">Dolu raf</b></button>
+          <button type="button" data-product-slide="2" aria-label="Tüm zamanları göster" data-aria-tr="Tüm zamanları göster" data-aria-en="Show all time" aria-pressed="false"><span>03</span><b data-tr="Tüm zamanlar" data-en="All time">Tüm zamanlar</b></button>
+        </div>
+        <div class="product-arrows">
+          <button class="product-arrow" type="button" data-product-prev aria-label="Önceki ekran" data-aria-tr="Önceki ekran" data-aria-en="Previous screen">←</button>
+          <button class="product-arrow" type="button" data-product-next aria-label="Sonraki ekran" data-aria-tr="Sonraki ekran" data-aria-en="Next screen">→</button>
+        </div>
+      </div>
       <div class="product-copy">
-        <p class="eyebrow" data-tr="Odak zamanlayıcısı" data-en="Focus timer">Odak zamanlayıcısı</p>
-        <h2 id="plop-title" data-tr="Emeğini bir kavanozda gör." data-en="See your effort in a jar.">Emeğini bir kavanozda gör.</h2>
-        <p data-tr="Her tamamlanan seans kavanozuna su ekler. Yarım kalan seanslar emeğini silmez; iz bırakır ve sana yeniden deneme alanı açar." data-en="Every completed session adds water to your jar. An unfinished session never erases your effort; it leaves a trace and gives you room to try again.">Her tamamlanan seans kavanozuna su ekler. Yarım kalan seanslar emeğini silmez; iz bırakır ve sana yeniden deneme alanı açar.</p>
+        <p class="eyebrow" id="product-eyebrow">Odak zamanlayıcısı</p>
+        <h2 id="plop-title">Emeğini bir kavanozda gör.</h2>
+        <p id="product-description">Her tamamlanan seans kavanozuna su ekler. Yarım kalan seanslar emeğini silmez; iz bırakır ve sana yeniden deneme alanı açar.</p>
         <ul>
-          <li><strong>Offline-first</strong><span data-tr="Hesap ve internet bağlantısı gerekmez." data-en="No account or internet connection required.">Hesap ve internet bağlantısı gerekmez.</span></li>
-          <li><strong data-tr="Sapmasız zamanlayıcı" data-en="Drift-free timer">Sapmasız zamanlayıcı</strong><span data-tr="Ekran kilitlense de seansın doğru ilerler." data-en="Your session stays accurate even when the screen is locked.">Ekran kilitlense de seansın doğru ilerler.</span></li>
-          <li><strong data-tr="Raf ve ritim" data-en="Shelf and rhythm">Raf ve ritim</strong><span data-tr="Günlerini, aylarını ve biriken odağını gör." data-en="See your days, months, and accumulated focus.">Günlerini, aylarını ve biriken odağını gör.</span></li>
+          <li><strong id="product-feature-title-1">Offline-first</strong><span id="product-feature-copy-1">Hesap ve internet bağlantısı gerekmez.</span></li>
+          <li><strong id="product-feature-title-2">Sapmasız zamanlayıcı</strong><span id="product-feature-copy-2">Ekran kilitlense de seansın doğru ilerler.</span></li>
+          <li><strong id="product-feature-title-3">Raf ve ritim</strong><span id="product-feature-copy-3">Günlerini, aylarını ve biriken odağını gör.</span></li>
         </ul>
         <div class="download-callout">
           <div>
-            <p data-tr="Odağını biriktirmeye başla." data-en="Start collecting your focus.">Odağını biriktirmeye başla.</p>
-            <span data-tr="Plop'u App Store'dan indir ve ilk kavanozunu doldur." data-en="Download Plop from the App Store and fill your first jar.">Plop'u App Store'dan indir ve ilk kavanozunu doldur.</span>
+            <p id="product-callout-title">Odağını biriktirmeye başla.</p>
+            <span id="product-callout-copy">Plop'u App Store'dan indir ve ilk kavanozunu doldur.</span>
           </div>
           <a class="download-link" href="https://apps.apple.com/app/id6790089890" target="_blank" rel="noopener noreferrer" aria-label="Plop'u App Store'dan indir" data-aria-tr="Plop'u App Store'dan indir" data-aria-en="Download Plop on the App Store">
             <b data-tr="App Store'dan İndir" data-en="Download on the App Store">App Store'dan İndir</b> <span aria-hidden="true">↗</span>
@@ -88,11 +100,11 @@
       </div>
       <div class="phone-stage">
         <div class="phone">
-          <img src="assets/plop-home.webp" data-src-tr="assets/plop-home.webp" data-src-en="assets/plop-home-en.webp" alt="Plop ana ekranında yarısı dolu bir kavanoz ve başla düğmesi" data-alt-tr="Plop ana ekranında yarısı dolu bir kavanoz ve başla düğmesi" data-alt-en="Plop home screen with a half-full jar and start button" width="430" height="932" loading="lazy">
+          <img id="product-screen" src="assets/plop-home.webp" alt="Plop ana ekranında yarısı dolu bir kavanoz ve başla düğmesi" width="660" height="1434" loading="lazy">
         </div>
         <div class="small-card">
-          <span data-tr="Gizlilik" data-en="Privacy">Gizlilik</span>
-          <strong data-tr="Verin cihazında kalır." data-en="Your data stays on your device.">Verin cihazında kalır.</strong>
+          <span id="product-card-label">Gizlilik</span>
+          <strong id="product-card-copy">Verin cihazında kalır.</strong>
         </div>
       </div>
     </section>
