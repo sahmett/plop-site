@@ -1,176 +1,155 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plop Destek · Plop Support</title>
-<style>
-  :root {
-    --bg: #fdfcfa;
-    --ink: #2b3440;
-    --ink-2: #5b6774;
-    --accent: #2e7fb8;
-    --rule: #e6e2dc;
-    --card: #f4f1ec;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #171c22;
-      --ink: #e8ebee;
-      --ink-2: #9aa6b2;
-      --accent: #6db3e0;
-      --rule: #2c343d;
-      --card: #1f262e;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  main { max-width: 640px; margin: 0 auto; padding: 48px 24px 80px; }
-  h1 { font-size: 1.7rem; margin: 0 0 4px; }
-  h2 { font-size: 1.15rem; margin: 40px 0 8px; }
-  h3 { font-size: 1rem; margin: 28px 0 6px; }
-  p { margin: 8px 0; }
-  .muted { color: var(--ink-2); }
-  .lang-nav { margin: 16px 0 0; font-size: .95rem; }
-  .lang-nav a { color: var(--accent); text-decoration: none; margin-right: 16px; }
-  .lang-nav a:hover { text-decoration: underline; }
-  a { color: var(--accent); }
-  hr { border: 0; border-top: 1px solid var(--rule); margin: 48px 0; }
-  .contact {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 14px 18px;
-    margin: 16px 0;
-  }
-  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; }
-  footer { max-width: 640px; margin: 0 auto; padding: 0 24px 48px; color: var(--ink-2); font-size: .85rem; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Get help with Plop, find answers to common questions, or contact Plop Studio.">
+  <title>Plop Support — Plop Studio</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="legal.css">
+  <script src="legal.js" defer></script>
 </head>
-<body>
-<main>
-  <h1>Plop</h1>
-  <p class="muted">Sakin, çevrimdışı odak zamanlayıcısı · A calm, offline focus timer</p>
-  <nav class="lang-nav"><a href="#tr">Türkçe</a><a href="#en">English</a></nav>
-
-  <section id="tr">
-    <h2>Destek</h2>
-    <div class="contact">
-      <p>Plop ile ilgili bir sorun yaşıyorsanız veya geri bildirim paylaşmak
-      istiyorsanız <a href="mailto:plopapp.studio@gmail.com">plopapp.studio@gmail.com</a>
-      adresine yazın.</p>
+<body data-page="support">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Plop Studio home" data-aria-tr="Plop Studio ana sayfa" data-aria-en="Plop Studio home">
+      <span class="brand-drop" aria-hidden="true"></span>
+      <span>Plop Studio</span>
+    </a>
+    <nav aria-label="Main navigation" data-aria-tr="Ana menü" data-aria-en="Main navigation">
+      <a href="index.html#plop">Plop</a>
+      <a href="support.html#en" aria-current="page" data-tr="Destek" data-en="Support" data-href-tr="support.html#tr" data-href-en="support.html#en">Support</a>
+      <a href="privacy.html#en" data-tr="Gizlilik" data-en="Privacy" data-href-tr="privacy.html#tr" data-href-en="privacy.html#en">Privacy</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Language selection" data-aria-tr="Dil seçimi" data-aria-en="Language selection">
+      <button type="button" data-language="tr" aria-pressed="false">TR</button>
+      <span aria-hidden="true"></span>
+      <button type="button" data-language="en" aria-pressed="true">EN</button>
     </div>
-    <p>Mesajınıza kullandığınız cihazı, işletim sistemi sürümünü ve Plop'un Ayarlar
-    ekranının altında görünen sürüm numarasını eklemeniz sorunu daha hızlı
-    incelememize yardımcı olur.</p>
+  </header>
 
-    <h2>Sık sorulan sorular</h2>
-
-    <h3>Plop için hesap gerekiyor mu?</h3>
-    <p>Hayır. Plop hesap açmadan ve internet bağlantısı gerektirmeden çalışır.</p>
-
-    <h3>Verilerim başka bir cihaza eşitleniyor mu?</h3>
-    <p>Hayır. Odak seansları, ayarlar ve istatistikler yalnızca cihazınızda
-    saklanır.</p>
-
-    <h3>Eski seanslarımı nerede görebilirim?</h3>
-    <p>Rafta içinde bulunduğunuz haftayı ve ay ay kavanoz koleksiyonunuzu
-    görebilirsiniz. Tüm zamanların birikimi de ömürlük kavanozda görünür.</p>
-
-    <h3>Haftanın ilk gününü değiştirebilir miyim?</h3>
-    <p>Evet. Ayarlar &gt; Hafta başlangıcı bölümünden Pazartesi veya Pazar
-    gününü seçebilirsiniz.</p>
-
-    <h3>Seans sonu bildirimi gelmiyor. Ne yapmalıyım?</h3>
-    <p>Cihazınızda Ayarlar &gt; Bildirimler &gt; Plop bölümünden bildirimlere izin
-    verildiğini kontrol edin. Sessiz mod ve odak ayarları bildirim sesini
-    etkileyebilir.</p>
-
-    <h3>Telefonumu kilitlersem seans devam eder mi?</h3>
-    <p>Evet. Ekranı kilitleyip çalışmaya dönmek akışı bozmaz; seans cihaz
-    saatine göre işlemeye devam eder. Plop kendiliğinden kapanır ya da cihazınız
-    yeniden başlarsa da seansınız cezalandırılmaz.</p>
-
-    <h3>Seans sırasında başka bir uygulamaya geçersem ne olur?</h3>
-    <p>Kısa bir tolerans vardır; birkaç saniyeliğine çıkmak bir şeyi bozmaz. Ama
-    odağınızı başka bir uygulamaya bırakıp bu toleransı aşarsanız akış kesilir
-    ve kavanoz çatlar. Emeğiniz silinmez: suyun büyük kısmı kavanozda kalır.</p>
-
-    <h3>Kavanozum çatladı, geri alabilir miyim?</h3>
-    <p>Evet. Sonuç ekranındaki onarım seçeneğiyle seansın kalan süresini
-    tamamlayın; kavanoz yeniden dolar ve onarım izini taşır. Onarım hakkı
-    sınırlı değildir — dönüş yolu her zaman açıktır.</p>
-
-    <h3>Verilerimi nasıl silebilirim?</h3>
-    <p>Plop şu anda hesap veya uzak sunucu kullanmaz. Uygulamayı cihazınızdan
-    silmek, Plop'un yerel uygulama verilerini kaldırır. Google veya iCloud cihaz
-    yedekleri, ilgili sağlayıcı ve cihaz ayarlarınız tarafından yönetilir.</p>
-
-    <p><a href="privacy.html#tr">Gizlilik politikası</a> · <a href="index.html">Plop Studio</a></p>
-  </section>
-
-  <hr>
-
-  <section id="en" lang="en">
-    <h2>Support</h2>
-    <div class="contact">
-      <p>For help with Plop or to share feedback, email
-      <a href="mailto:plopapp.studio@gmail.com">plopapp.studio@gmail.com</a>.</p>
+  <main class="legal-shell">
+    <div class="legal-intro">
+      <p class="eyebrow">Plop Studio</p>
+      <h1 data-tr="Nasıl yardımcı olabiliriz?" data-en="How can we help?">How can we help?</h1>
+      <p data-tr="Plop ile ilgili yanıtları bul veya doğrudan bize ulaş." data-en="Find answers about Plop or reach us directly.">Find answers about Plop or reach us directly.</p>
     </div>
-    <p>Include your device model, OS version, and the Plop version shown at
-    the bottom of Settings so we can investigate more quickly.</p>
 
-    <h2>Frequently asked questions</h2>
+    <section class="legal-section" id="en" lang="en" data-language-section="en">
+      <h2>Support</h2>
+      <div class="contact-card">
+        <p>For help with Plop or to share feedback, email
+        <a href="mailto:plopapp.studio@gmail.com">plopapp.studio@gmail.com</a>.</p>
+      </div>
+      <p>Include your device model, OS version, and the Plop version shown at
+      the bottom of Settings so we can investigate more quickly.</p>
 
-    <h3>Does Plop require an account?</h3>
-    <p>No. Plop works without an account or an internet connection.</p>
+      <h2>Frequently asked questions</h2>
 
-    <h3>Does my data sync to another device?</h3>
-    <p>No. Focus sessions, settings, and statistics are stored only on your
-    device.</p>
+      <h3>Does Plop require an account?</h3>
+      <p>No. Plop works without an account or an internet connection.</p>
 
-    <h3>Where can I find older sessions?</h3>
-    <p>The Shelf shows your current week and your jar collection month by
-    month. Your all-time accumulation also appears in the Lifetime Jar.</p>
+      <h3>Does my data sync to another device?</h3>
+      <p>No. Focus sessions, settings, and statistics are stored only on your device.</p>
 
-    <h3>Can I change the first day of the week?</h3>
-    <p>Yes. In Settings &gt; Week starts on, choose Monday or Sunday.</p>
+      <h3>Where can I find older sessions?</h3>
+      <p>The Shelf shows your current week and your jar collection month by
+      month. Your all-time accumulation also appears in the Lifetime Jar.</p>
 
-    <h3>I did not receive a session alert. What should I do?</h3>
-    <p>On your device, open Settings &gt; Notifications &gt; Plop and make sure
-    notifications are allowed. Silent Mode and Focus settings can affect
-    notification sounds.</p>
+      <h3>Can I change the first day of the week?</h3>
+      <p>Yes. In Settings &gt; Week starts on, choose Monday or Sunday.</p>
 
-    <h3>Does a session continue when I lock my phone?</h3>
-    <p>Yes. Locking the screen and getting back to work does not break your
-    flow; the session keeps running against the device clock. If Plop is closed
-    by the system or your device restarts, your session is not penalized
-    either.</p>
+      <h3>I did not receive a session alert. What should I do?</h3>
+      <p>On your device, open Settings &gt; Notifications &gt; Plop and make sure
+      notifications are allowed. Silent Mode and Focus settings can affect
+      notification sounds.</p>
 
-    <h3>What happens if I switch to another app during a session?</h3>
-    <p>There is a short tolerance, so stepping out for a few seconds breaks
-    nothing. But if you leave your focus with another app beyond that tolerance,
-    the flow is interrupted and the jar cracks. Your effort is not erased: most
-    of the water stays in the jar.</p>
+      <h3>Does a session continue when I lock my phone?</h3>
+      <p>Yes. Locking the screen and getting back to work does not break your
+      flow; the session keeps running against the device clock. If Plop is closed
+      by the system or your device restarts, your session is not penalized either.</p>
 
-    <h3>My jar cracked. Can I get it back?</h3>
-    <p>Yes. Use the repair option on the result screen to complete what is left
-    of the session; the jar fills back up and carries the mark of its repair.
-    Repair is not limited &mdash; the way back is always open.</p>
+      <h3>What happens if I switch to another app during a session?</h3>
+      <p>There is a short tolerance, so stepping out for a few seconds breaks
+      nothing. But if you leave your focus with another app beyond that tolerance,
+      the flow is interrupted and the jar cracks. Your effort is not erased: most
+      of the water stays in the jar.</p>
 
-    <h3>How do I delete my data?</h3>
-    <p>Plop does not currently use accounts or remote servers. Deleting the app
-    removes Plop's local app data from your device. Google or Apple may manage
-    device backups according to their policies and your device settings.</p>
+      <h3>My jar cracked. Can I get it back?</h3>
+      <p>Yes. Use the repair option on the result screen to complete what is left
+      of the session; the jar fills back up and carries the mark of its repair.
+      Repair is not limited &mdash; the way back is always open.</p>
 
-    <p><a href="privacy.html#en">Privacy policy</a> · <a href="index.html">Plop Studio</a></p>
-  </section>
-</main>
-<footer>© 2026 Seyyit Ahmet Kılıç</footer>
+      <h3>How do I delete my data?</h3>
+      <p>Plop does not currently use accounts or remote servers. Deleting the app
+      removes Plop's local app data from your device. Google or Apple may manage
+      device backups according to their policies and your device settings.</p>
+
+      <p class="legal-links"><a href="privacy.html#en">Privacy policy</a><a href="index.html">Plop Studio</a></p>
+    </section>
+
+    <section class="legal-section" id="tr" lang="tr" data-language-section="tr" hidden>
+      <h2>Destek</h2>
+      <div class="contact-card">
+        <p>Plop ile ilgili bir sorun yaşıyorsanız veya geri bildirim paylaşmak
+        istiyorsanız <a href="mailto:plopapp.studio@gmail.com">plopapp.studio@gmail.com</a>
+        adresine yazın.</p>
+      </div>
+      <p>Mesajınıza kullandığınız cihazı, işletim sistemi sürümünü ve Plop'un Ayarlar
+      ekranının altında görünen sürüm numarasını eklemeniz sorunu daha hızlı
+      incelememize yardımcı olur.</p>
+
+      <h2>Sık sorulan sorular</h2>
+
+      <h3>Plop için hesap gerekiyor mu?</h3>
+      <p>Hayır. Plop hesap açmadan ve internet bağlantısı gerektirmeden çalışır.</p>
+
+      <h3>Verilerim başka bir cihaza eşitleniyor mu?</h3>
+      <p>Hayır. Odak seansları, ayarlar ve istatistikler yalnızca cihazınızda saklanır.</p>
+
+      <h3>Eski seanslarımı nerede görebilirim?</h3>
+      <p>Rafta içinde bulunduğunuz haftayı ve ay ay kavanoz koleksiyonunuzu
+      görebilirsiniz. Tüm zamanların birikimi de ömürlük kavanozda görünür.</p>
+
+      <h3>Haftanın ilk gününü değiştirebilir miyim?</h3>
+      <p>Evet. Ayarlar &gt; Hafta başlangıcı bölümünden Pazartesi veya Pazar gününü seçebilirsiniz.</p>
+
+      <h3>Seans sonu bildirimi gelmiyor. Ne yapmalıyım?</h3>
+      <p>Cihazınızda Ayarlar &gt; Bildirimler &gt; Plop bölümünden bildirimlere izin
+      verildiğini kontrol edin. Sessiz mod ve odak ayarları bildirim sesini etkileyebilir.</p>
+
+      <h3>Telefonumu kilitlersem seans devam eder mi?</h3>
+      <p>Evet. Ekranı kilitleyip çalışmaya dönmek akışı bozmaz; seans cihaz
+      saatine göre işlemeye devam eder. Plop kendiliğinden kapanır ya da cihazınız
+      yeniden başlarsa da seansınız cezalandırılmaz.</p>
+
+      <h3>Seans sırasında başka bir uygulamaya geçersem ne olur?</h3>
+      <p>Kısa bir tolerans vardır; birkaç saniyeliğine çıkmak bir şeyi bozmaz. Ama
+      odağınızı başka bir uygulamaya bırakıp bu toleransı aşarsanız akış kesilir
+      ve kavanoz çatlar. Emeğiniz silinmez: suyun büyük kısmı kavanozda kalır.</p>
+
+      <h3>Kavanozum çatladı, geri alabilir miyim?</h3>
+      <p>Evet. Sonuç ekranındaki onarım seçeneğiyle seansın kalan süresini
+      tamamlayın; kavanoz yeniden dolar ve onarım izini taşır. Onarım hakkı
+      sınırlı değildir — dönüş yolu her zaman açıktır.</p>
+
+      <h3>Verilerimi nasıl silebilirim?</h3>
+      <p>Plop şu anda hesap veya uzak sunucu kullanmaz. Uygulamayı cihazınızdan
+      silmek, Plop'un yerel uygulama verilerini kaldırır. Google veya iCloud cihaz
+      yedekleri, ilgili sağlayıcı ve cihaz ayarlarınız tarafından yönetilir.</p>
+
+      <p class="legal-links"><a href="privacy.html#tr">Gizlilik politikası</a><a href="index.html">Plop Studio</a></p>
+    </section>
+  </main>
+
+  <footer class="legal-footer">
+    <div><strong>Plop Studio</strong><span>İstanbul · 2026</span></div>
+    <nav aria-label="Footer navigation" data-aria-tr="Alt menü" data-aria-en="Footer navigation">
+      <a href="index.html">Plop</a>
+      <a href="privacy.html#en" data-tr="Gizlilik" data-en="Privacy" data-href-tr="privacy.html#tr" data-href-en="privacy.html#en">Privacy</a>
+      <a href="mailto:plopapp.studio@gmail.com" data-tr="E-posta" data-en="Email">Email</a>
+    </nav>
+  </footer>
 </body>
 </html>

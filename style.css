@@ -54,11 +54,10 @@ footer {
   letter-spacing: -.02em;
 }
 .brand-drop {
-  width: 13px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   background: linear-gradient(145deg, var(--aqua), var(--blue));
-  border-radius: 65% 35% 60% 40% / 70% 40% 60% 30%;
-  transform: rotate(45deg);
+  border-radius: 50% 0 50% 50%;
   box-shadow: 0 0 22px rgba(74, 223, 208, .4);
 }
 .site-header nav,
@@ -67,6 +66,27 @@ footer nav { display: flex; gap: 28px; }
 footer a { color: var(--paper-muted); text-decoration: none; font-size: .92rem; }
 .site-header nav a:hover,
 footer a:hover { color: #fff; }
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .035);
+}
+.language-switch button {
+  padding: 0;
+  border: 0;
+  color: #718196;
+  background: transparent;
+  font: 700 .72rem/1 var(--sans);
+  letter-spacing: .06em;
+  cursor: pointer;
+}
+.language-switch button[aria-pressed="true"] { color: var(--aqua); }
+.language-switch span { width: 1px; height: 12px; background: var(--line); }
+.language-switch button:focus-visible { outline: 2px solid var(--aqua); outline-offset: 4px; border-radius: 2px; }
 
 main { overflow: hidden; }
 .hero {
@@ -102,6 +122,9 @@ h1 {
   line-height: .86;
 }
 h1 em { color: var(--aqua); font-weight: 400; }
+@media (min-width: 561px) {
+  html[lang="en"] .hero h1 { font-size: clamp(3.4rem, 6.8vw, 5.6rem); }
+}
 .hero-text {
   max-width: 610px;
   margin-bottom: 34px;
@@ -123,7 +146,16 @@ h1 em { color: var(--aqua); font-weight: 400; }
 .button:hover { transform: translateY(-2px); }
 .button.primary { color: #05151c; background: var(--aqua); }
 .button.secondary { border: 1px solid var(--line); background: rgba(255,255,255,.035); }
+.app-store-badge-link {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 7px;
+  transition: transform .2s ease, filter .2s ease;
+}
+.app-store-badge-link:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.app-store-badge-link img { display: block; height: 42px; width: auto; }
 .availability { margin: 23px 0 0; color: #8e9cac; font-size: .86rem; }
+.availability b { font-weight: inherit; }
 .availability span {
   display: inline-block;
   width: 7px;
@@ -168,6 +200,29 @@ h1 em { color: var(--aqua); font-weight: 400; }
 .product ul { list-style: none; margin: 42px 0 0; padding: 0; }
 .product li { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 18px 0; border-top: 1px solid var(--line); }
 .product li span { color: #91a0b1; }
+.download-callout {
+  margin-top: 36px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  border: 1px solid rgba(74, 223, 208, .25);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(74, 223, 208, .1), rgba(75, 156, 244, .08));
+}
+.download-callout p { margin: 0 0 3px; color: #fff; font-weight: 720; }
+.download-callout > div > span { color: #91a0b1; font-size: .9rem; }
+.download-link {
+  flex: 0 0 auto;
+  color: var(--aqua);
+  font-size: .9rem;
+  font-weight: 720;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.download-link span { display: inline-block; margin-left: 5px; transition: transform .2s ease; }
+.download-link:hover span { transform: translate(2px, -2px); }
 .phone-stage { position: relative; min-height: 760px; display: grid; place-items: center; }
 .phone-stage::before { content: ""; position: absolute; inset: 14% 5%; border-radius: 50%; background: rgba(37, 162, 209, .19); filter: blur(52px); }
 .phone { position: relative; z-index: 1; width: min(390px, 78vw); padding: 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 56px; background: #020910; box-shadow: 0 38px 90px rgba(0,0,0,.45); transform: rotate(3deg); }
@@ -196,12 +251,15 @@ footer span { color: #77889a; font-size: .82rem; }
 @media (max-width: 560px) {
   .site-header { height: 72px; }
   .site-header nav { gap: 14px; }
+  .site-header nav a { font-size: .82rem; }
+  .language-switch { gap: 6px; padding: 5px 7px; }
   .hero { width: min(100% - 28px, 1180px); padding-top: 56px; }
   h1 { font-size: clamp(3.8rem, 19vw, 5.5rem); }
   .hero-art { min-height: 370px; }
   .hero-art img { width: 94%; }
   .promise > h2 { margin-bottom: 56px; }
   .product li { grid-template-columns: 1fr; gap: 4px; }
+  .download-callout { align-items: flex-start; flex-direction: column; }
   .phone-stage { min-height: 620px; }
   .small-card { right: -8px; bottom: 7%; width: 190px; }
   .closing { padding: 105px 20px; }
