@@ -43,9 +43,12 @@
           <a class="app-store-badge-link" href="https://apps.apple.com/app/id6790089890" target="_blank" rel="noopener noreferrer" aria-label="Plop'u App Store'dan indir" data-aria-tr="Plop'u App Store'dan indir" data-aria-en="Download Plop on the App Store">
             <img src="assets/app-store-badge-tr.svg" data-src-tr="assets/app-store-badge-tr.svg" data-src-en="assets/app-store-badge-en.svg" alt="App Store'dan İndirin" data-alt-tr="App Store'dan İndirin" data-alt-en="Download on the App Store" width="151" height="40">
           </a>
+          <a class="app-store-badge-link play-badge-link" href="https://play.google.com/store/apps/details?id=com.sahmett.plop&amp;hl=tr" data-href-tr="https://play.google.com/store/apps/details?id=com.sahmett.plop&amp;hl=tr" data-href-en="https://play.google.com/store/apps/details?id=com.sahmett.plop&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Plop'u Google Play'den indir" data-aria-tr="Plop'u Google Play'den indir" data-aria-en="Get Plop on Google Play">
+            <img src="assets/google-play-badge-tr.png" data-src-tr="assets/google-play-badge-tr.png" data-src-en="assets/google-play-badge-en.png" alt="Google Play'den İndirin" data-alt-tr="Google Play'den İndirin" data-alt-en="Get it on Google Play" width="646" height="250">
+          </a>
           <a class="button secondary" href="#plop" data-tr="Plop'u keşfet" data-en="Discover Plop">Plop'u keşfet</a>
         </div>
-        <p class="availability"><span></span><b data-tr="iOS ve Android için geliştirildi" data-en="Designed for iOS and Android">iOS ve Android için geliştirildi</b></p>
+        <p class="availability"><span></span><b data-tr="iPhone, iPad ve Android'de" data-en="On iPhone, iPad and Android">iPhone, iPad ve Android'de</b></p>
       </div>
 
       <div class="hero-art" aria-label="Plop uygulamasının su damlası ve kavanoz simgesi" data-aria-tr="Plop uygulamasının su damlası ve kavanoz simgesi" data-aria-en="Plop app icon with a water drop and jar">
@@ -53,6 +56,31 @@
         <img src="assets/plop-icon.png" alt="Plop uygulama simgesi" width="720" height="720">
         <span class="orbit orbit-one"></span>
         <span class="orbit orbit-two"></span>
+      </div>
+    </section>
+
+    <section class="reel" aria-labelledby="reel-title">
+      <div class="reel-copy">
+        <p class="eyebrow" data-tr="22 saniyede Plop" data-en="Plop in 22 seconds">22 saniyede Plop</p>
+        <h2 id="reel-title" data-html-tr="Odak sayılmaz.<br><em>Birikir.</em>" data-html-en="Focus isn't counted.<br><em>It's collected.</em>">Odak sayılmaz.<br><em>Birikir.</em></h2>
+        <p data-tr="Kavanoz sen odaklandıkça dolar. Akış kesilirse çatlar; geri dönüp tamamladığında altın bir izle onarılır." data-en="The jar fills as you focus. If the flow breaks, it cracks; come back and finish, and it mends in gold.">Kavanoz sen odaklandıkça dolar. Akış kesilirse çatlar; geri dönüp tamamladığında altın bir izle onarılır.</p>
+      </div>
+      <div class="reel-stage">
+        <div class="reel-frame">
+          <video class="reel-video" muted loop playsinline preload="none" poster="assets/plop-reel-poster.webp" width="720" height="1280" aria-label="Plop tanıtım videosu: geri sayım kavanoza dönüşür, kavanoz dolar, çatlar ve altınla onarılır" data-aria-tr="Plop tanıtım videosu: geri sayım kavanoza dönüşür, kavanoz dolar, çatlar ve altınla onarılır" data-aria-en="Plop promo video: a countdown turns into a jar that fills, cracks and mends in gold">
+            <source src="assets/plop-reel.mp4" type="video/mp4">
+          </video>
+          <div class="reel-controls">
+            <button type="button" class="reel-button" data-reel-play data-state="paused">
+              <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+              <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
+            </button>
+            <button type="button" class="reel-button" data-reel-sound aria-pressed="false">
+              <svg class="icon-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <svg class="icon-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -84,18 +112,23 @@
         <h2 id="plop-title">Emeğini bir kavanozda gör.</h2>
         <p id="product-description">Her tamamlanan seans kavanozuna su ekler. Yarım kalan seanslar emeğini silmez; iz bırakır ve sana yeniden deneme alanı açar.</p>
         <ul>
-          <li><strong id="product-feature-title-1">Offline-first</strong><span id="product-feature-copy-1">Hesap ve internet bağlantısı gerekmez.</span></li>
+          <li><strong id="product-feature-title-1">Offline-first</strong><span id="product-feature-copy-1">İnternet gerekmez; verilerin cihazında kalır.</span></li>
           <li><strong id="product-feature-title-2">Sapmasız zamanlayıcı</strong><span id="product-feature-copy-2">Ekran kilitlense de seansın doğru ilerler.</span></li>
           <li><strong id="product-feature-title-3">Raf ve ritim</strong><span id="product-feature-copy-3">Günlerini, aylarını ve biriken odağını gör.</span></li>
         </ul>
         <div class="download-callout">
           <div>
             <p id="product-callout-title">Odağını biriktirmeye başla.</p>
-            <span id="product-callout-copy">Plop'u App Store'dan indir ve ilk kavanozunu doldur.</span>
+            <span id="product-callout-copy">Plop'u indir ve ilk kavanozunu doldur.</span>
           </div>
-          <a class="download-link" href="https://apps.apple.com/app/id6790089890" target="_blank" rel="noopener noreferrer" aria-label="Plop'u App Store'dan indir" data-aria-tr="Plop'u App Store'dan indir" data-aria-en="Download Plop on the App Store">
-            <b data-tr="App Store'dan İndir" data-en="Download on the App Store">App Store'dan İndir</b> <span aria-hidden="true">↗</span>
-          </a>
+          <div class="download-links">
+            <a class="download-link" href="https://apps.apple.com/app/id6790089890" target="_blank" rel="noopener noreferrer" aria-label="Plop'u App Store'dan indir" data-aria-tr="Plop'u App Store'dan indir" data-aria-en="Download Plop on the App Store">
+              <b>App Store</b> <span aria-hidden="true">↗</span>
+            </a>
+            <a class="download-link" href="https://play.google.com/store/apps/details?id=com.sahmett.plop&amp;hl=tr" data-href-tr="https://play.google.com/store/apps/details?id=com.sahmett.plop&amp;hl=tr" data-href-en="https://play.google.com/store/apps/details?id=com.sahmett.plop&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Plop'u Google Play'den indir" data-aria-tr="Plop'u Google Play'den indir" data-aria-en="Get Plop on Google Play">
+              <b>Google Play</b> <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="phone-stage">
@@ -125,5 +158,6 @@
       <a href="mailto:plopapp.studio@gmail.com" data-tr="E-posta" data-en="Email">E-posta</a>
     </nav>
   </footer>
+  <p class="trademarks" data-tr="Apple, Apple logosu, iPhone ve iPad, Apple Inc.'in ABD'de ve diğer ülkelerde tescilli ticari markalarıdır. App Store, Apple Inc.'in hizmet markasıdır. Google Play ve Google Play logosu, Google LLC'nin ticari markalarıdır." data-en="Apple, the Apple logo, iPhone and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.">Apple, Apple logosu, iPhone ve iPad, Apple Inc.'in ABD'de ve diğer ülkelerde tescilli ticari markalarıdır. App Store, Apple Inc.'in hizmet markasıdır. Google Play ve Google Play logosu, Google LLC'nin ticari markalarıdır.</p>
 </body>
 </html>

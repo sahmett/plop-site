@@ -38,12 +38,12 @@
         title: 'Emeğini bir kavanozda gör.',
         description: 'Her tamamlanan seans kavanozuna su ekler. Yarım kalan seanslar emeğini silmez; iz bırakır ve sana yeniden deneme alanı açar.',
         features: [
-          ['Offline-first', 'Hesap ve internet bağlantısı gerekmez.'],
+          ['Offline-first', 'İnternet gerekmez; verilerin cihazında kalır.'],
           ['Sapmasız zamanlayıcı', 'Ekran kilitlense de seansın doğru ilerler.'],
           ['Raf ve ritim', 'Günlerini, aylarını ve biriken odağını gör.'],
         ],
         calloutTitle: 'Odağını biriktirmeye başla.',
-        calloutCopy: "Plop'u App Store'dan indir ve ilk kavanozunu doldur.",
+        calloutCopy: "Plop'u indir ve ilk kavanozunu doldur.",
         image: 'assets/plop-home.webp',
         alt: 'Plop ana ekranında yarısı dolu bir kavanoz ve başla düğmesi',
         cardLabel: 'Gizlilik',
@@ -88,12 +88,12 @@
         title: 'See your effort in a jar.',
         description: 'Every completed session adds water to your jar. An unfinished session never erases your effort; it leaves a trace and gives you room to try again.',
         features: [
-          ['Offline-first', 'No account or internet connection required.'],
+          ['Offline-first', 'No internet needed; your data stays on your device.'],
           ['Drift-free timer', 'Your session stays accurate even when the screen is locked.'],
           ['Shelf and rhythm', 'See your days, months, and accumulated focus.'],
         ],
         calloutTitle: 'Start collecting your focus.',
-        calloutCopy: 'Download Plop from the App Store and fill your first jar.',
+        calloutCopy: 'Download Plop and fill your first jar.',
         image: 'assets/plop-home-en.webp',
         alt: 'Plop home screen with a half-full jar and start button',
         cardLabel: 'Privacy',
@@ -202,6 +202,7 @@
     title.textContent = copy[lang].title;
     description.content = copy[lang].description;
     renderProductSlide(lang);
+    updateReelControls();
 
     if (remember) {
       try { localStorage.setItem('plop-language', lang); } catch (_) {}
@@ -226,6 +227,63 @@
     if (Math.abs(distance) > 55) showProductSlide(activeProductSlide + (distance < 0 ? 1 : -1));
     touchStartX = undefined;
   }, { passive: true });
+
+  const reelVideo = document.querySelector('.reel-video');
+  const reelPlay = document.querySelector('[data-reel-play]');
+  const reelSound = document.querySelector('[data-reel-sound]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const reelLabels = {
+    tr: { play: 'Videoyu oynat', pause: 'Videoyu duraklat', soundOn: 'Sesi aç', soundOff: 'Sesi kapat' },
+    en: { play: 'Play video', pause: 'Pause video', soundOn: 'Turn sound on', soundOff: 'Turn sound off' },
+  };
+  // Oynatma niyeti: hareket azaltmayı seçmeyenlerde baştan açık, düğmeyle
+  // açılıp kapanır. Video yalnız niyet varken, görünürken ve sekme öndeyken
+  // oynar; kaydırınca ya da sekme arka plana geçince durur, niyet korunur ve
+  // geri gelince kaldığı yerden sürer.
+  let reelWanted = !reducedMotion.matches;
+  let reelInView = !('IntersectionObserver' in window);
+
+  function updateReelControls() {
+    if (!reelVideo) return;
+    const labels = reelLabels[root.lang === 'en' ? 'en' : 'tr'];
+    const playing = !reelVideo.paused;
+    reelPlay.dataset.state = playing ? 'playing' : 'paused';
+    reelPlay.setAttribute('aria-label', playing ? labels.pause : labels.play);
+    reelSound.setAttribute('aria-pressed', String(!reelVideo.muted));
+    reelSound.setAttribute('aria-label', reelVideo.muted ? labels.soundOn : labels.soundOff);
+  }
+
+  function syncReel() {
+    if (reelWanted && reelInView && !document.hidden) {
+      // Sessiz otomatik oynatma bile reddedilebilir (ör. iOS düşük güç modu);
+      // o zaman poster kalır ve oynat düğmesi görünür.
+      reelVideo.play().catch(updateReelControls);
+    } else {
+      reelVideo.pause();
+    }
+  }
+
+  if (reelVideo) {
+    reelPlay.addEventListener('click', () => {
+      reelWanted = reelVideo.paused;
+      syncReel();
+    });
+    reelSound.addEventListener('click', () => {
+      reelVideo.muted = !reelVideo.muted;
+      if (!reelVideo.muted) {
+        reelWanted = true;
+        syncReel();
+      }
+    });
+    ['play', 'pause', 'volumechange'].forEach((type) => reelVideo.addEventListener(type, updateReelControls));
+    document.addEventListener('visibilitychange', syncReel);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        reelInView = entry.isIntersecting;
+        syncReel();
+      }, { threshold: 0.4 }).observe(reelVideo);
+    }
+  }
 
   let savedLanguage;
   try { savedLanguage = localStorage.getItem('plop-language'); } catch (_) {}
